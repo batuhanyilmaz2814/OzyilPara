@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OzyilPara.MainPage"
+             Title="Özyıl Para">
+
+    <!-- Ana Grid yapısı: HEADER / CONTENT / FOOTER -->
+    <Grid RowDefinitions="Auto, *, Auto"
+        ColumnDefinitions="*">
+
+        <!-- HEADER: Logo ve Firma Adı Sağ Üstte -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Padding="10">
+            <StackLayout Grid.Column="1" Spacing="2" HorizontalOptions="End">
+                <!-- Logo -->
+                <Image Source="firma_logo.jpg"
+               WidthRequest="40"
+               HeightRequest="40"
+               Aspect="AspectFit" />
+                <!-- Firma Adı -->
+                <Label Text="Özyıl İnteractive"
+               FontSize="12"
+               TextColor="GhostWhite"
+               HorizontalOptions="Center" />
+            </StackLayout>
+        </Grid>
+
+        <!-- CONTENT: Gelir, Gider, Bakiye ve Butonlar Ortada -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="30,10"
+                           Spacing="20"
+                           HorizontalOptions="Center">
+
+                <!-- Gelir -->
+                <Label Text="Toplam Gelir:" FontSize="20" TextColor="Green"/>
+                <Label x:Name="IncomeLabel" Text="₺0" FontSize="24" FontAttributes="Bold" />
+
+                <!-- Gider -->
+                <Label Text="Toplam Gider:" FontSize="20" TextColor="Red"/>
+                <Label x:Name="ExpenseLabel" Text="₺0" FontSize="24" FontAttributes="Bold" />
+
+                <!-- Bakiye -->
+                <Label Text="Bakiye:" FontSize="20" TextColor="Blue"/>
+                <Label x:Name="BalanceLabel" Text="₺0" FontSize="28" FontAttributes="Bold" />
+
+                <!-- Butonlar -->
+                <Button Text="Gelir Ekle" Clicked="OnAddIncomeClicked"/>
+                <Button Text="Gider Ekle" Clicked="OnAddExpenseClicked"/>
+                <Button Text="Geçmiş İşlemler" Clicked="OnHistoryClicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- FOOTER: Adınız Soyadınız Sayfanın Altında Ortada -->
+        <Label Grid.Row="2"
+           Text="Batuhan Yılmaz - Yıldız Teknik Üniversitesi CE"
+           FontSize="14"
+           TextColor="Gray"
+           HorizontalOptions="Center"
+           Margin="0,5"/>
+    </Grid>
+
+</ContentPage>
