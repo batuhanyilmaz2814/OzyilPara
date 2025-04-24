@@ -44,7 +44,7 @@
 		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
 		<GenerateTestArtifacts>True</GenerateTestArtifacts>
 		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-		<PackageCertificateThumbprint>BBD712BF01A416EF2F18A0706843C971CDD27CFF</PackageCertificateThumbprint>
+		<PackageCertificateThumbprint>6346A1F633F383CBA74908DC904690267E97ED8F</PackageCertificateThumbprint>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
