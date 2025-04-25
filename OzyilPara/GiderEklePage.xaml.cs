@@ -13,20 +13,29 @@ namespace OzyilPara
             InitializeComponent();
         }
 
+        
         private void OnEkleClicked(object sender, EventArgs e)
         {
-            // Tutar textbox'ýndan decimal deðeri almaya çalýþ
-            if (decimal.TryParse(TutarEntry.Text, out decimal tutar))
+            // Varsayýlan carpan deðeri
+            decimal carpan = 1;
+
+            // Kullanýcý geçerli bir deðer girdiyse, onu kullan
+            if (!string.IsNullOrWhiteSpace(CarpanEntry.Text) && decimal.TryParse(CarpanEntry.Text, out decimal girilenCarpan))
+            {
+                carpan = girilenCarpan;
+            }
+
+            // Tutarý kontrol et
+            if (decimal.TryParse(TutarEntry.Text, out decimal maliyet))
             {
                 var aciklama = AciklamaEntry.Text ?? string.Empty;
                 var gider = new GiderBilgisi
                 {
-                    Tutar = tutar,
+                    Tutar = carpan * maliyet,
                     Aciklama = aciklama,
                     Tarih = DateTime.Now
                 };
 
-                // Olayý tetikle ve ana sayfaya geri dön
                 GiderEklendi?.Invoke(this, gider);
                 Navigation.PopAsync();
             }
@@ -35,5 +44,6 @@ namespace OzyilPara
                 DisplayAlert("Hata", "Lütfen geçerli bir tutar giriniz.", "Tamam");
             }
         }
+
     }
 }

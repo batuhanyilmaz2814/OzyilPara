@@ -12,6 +12,9 @@
         <Label Text="Tutar (₺):" />
         <Entry x:Name="TutarEntry" Keyboard="Numeric" Placeholder="Örn: 500" />
 
+        <Label Text="Çarpan"/>
+        <Entry x:Name="CarpanEntry" Keyboard="Numeric" Placeholder="Örn: 30" />
+
         <Button Text="Ekle"
                 BackgroundColor="LightGreen"
                 Clicked="OnEkleClicked" />
