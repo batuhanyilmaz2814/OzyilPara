@@ -78,6 +78,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\firma_logo.jpg" />
+	  <None Remove="Resources\Images\ytulogo.png" />
 	</ItemGroup>
 
 	<ItemGroup>

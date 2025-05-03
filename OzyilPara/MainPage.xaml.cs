@@ -76,6 +76,11 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(historyPage);
     }
 
+    private async void OnLinkButtonClicked(object sender, EventArgs e)
+    {
+        var url = "https://www.youtube.com/@ozyilyapimcilik";
+        await Launcher.Default.OpenAsync(url);
+    }
 
     private void UpdateBalance()
     {
